@@ -19,6 +19,10 @@ echo "### Personnalisation ###" >> /home/${USER}/.bashrc
 echo "clear" >> /home/${USER}/.bashrc
 echo "neofetch --config /home/${USER}/.config/neofetch/.neofetch.conf --source /home/${USER}/.config/neofetch/ASCII/harrypotter.txt --ascii_distro garuda" >> /home/${USER}/.bashrc
 clear
+neofetch --config /home/${USER}/.config/neofetch/.neofetch.conf
+sleep 5
+clear
+
 
 echo "Installation de Bat"
 sudo apt install -y bat
@@ -28,6 +32,9 @@ clear
 echo "Installation de NCDU/DUF"
 echo "- Alternative à du/df"
 sudo apt install -y ncdu duf
+clear
+duf
+sleep 5
 clear
 
 echo "Installation de Btop"
@@ -53,3 +60,4 @@ echo "Mise en place des Alias"
 echo "## Alias ##" >> /home/${USER}/.bashrc
 echo "alias neofetch='neofetch --config /home/${USER}/.config/neofetch/.neofetch.conf --source /home/${USER}/.config/neofetch/ASCII/harrypotter.txt --ascii_distro garuda'" >> /home/${USER}/.bashrc
 echo "alias cat=batcat" >> /home/${USER}/.bashrc
+echo "alias sudoku=nudoku" >> /home/${USER}/.bashrc
