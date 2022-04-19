@@ -17,4 +17,5 @@
 
 ## Installation
 cd PimpMyTerminal
+
 bash install.sh
