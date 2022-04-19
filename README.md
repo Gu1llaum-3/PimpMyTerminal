@@ -1,5 +1,5 @@
 # PimpMyTerminal
-| Pimpmyterminal is currently only compatible with Ubuntu version 20.04 (Beta)
+| Pimpmyterminal is currently only compatible with Ubuntu version 22.04 (Beta)
 
 ## Packages installed with this script
 * [Neofetch](https://github.com/dylanaraps/neofetch) : A command-line system information tool written in bash 3.2+
