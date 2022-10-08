@@ -5,11 +5,11 @@ echo "Mise à jour de la liste des paquets"
 sudo apt update
 clear
 
-#echo "Installation de Nala - Bien mieux que aptitude"
+echo "Installation de Nala - Bien mieux que aptitude"
 #echo "deb [arch=amd64,arm64,armhf] http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
 #wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
-#sudo apt update && sudo apt install -y nala
-#clear
+sudo apt update && sudo apt install -y nala
+clear
 
 echo "Installation de Neofetch"
 sudo apt install -y neofetch
@@ -46,15 +46,17 @@ sudo apt install btop
 #tar -xf ./btop-x86_64-linux-musl.tbz
 #sudo make install
 #cd ..
-#clear
+clear
 
 echo "Nano en couleur"
 sudo git clone https://github.com/serialhex/nano-highlight.git /home/${USER}/.nano
 cp ./nano/.nanorc /home/${USER}/
+clear
 
 echo "Games"
 echo "Installation de Nudoku"
 sudo apt install nudoku
+clear
 
 echo "Mise en place des Alias"
 echo "## Alias ##" >> /home/${USER}/.bashrc
