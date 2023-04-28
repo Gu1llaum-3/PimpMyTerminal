@@ -12,8 +12,9 @@ packages=(
 )
 
 # Packages installation
+sudo apt update
 for package in "${packages[@]}"; do
-    sudo apt install "$packages"
+    sudo apt install "$package"
 done
 
 # Git installation #
@@ -27,35 +28,33 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 # Alias #
 
 # Lignes à ajouter à .zshrc
-aliases=(
-    '#neofetch'
-    'neofetch --config ~/.config/neofetch/.neofetch.conf
-    'bash ~/scripts/kaamelott.sh'
-    'echo ""'
-    ''
-    '### Alias'
-    'alias cat='\'bat -p\'''
-    'alias catn=bat'
-    ''
-    'alias ls='\'exa --grid --color auto --icons --sort=type\'''
-    'alias ll='\'exa --long --color always --icons --sort=type\'''
-    'alias la='\'exa --grid --all --color auto --icons --sort=type\'''
-    'alias lla='\'exa --long --all --color auto --icons --sort=type\'''
-    ''
-    '### zsh-autocompletion'
-    'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
-    ''
-    '### zsh-syntax-highlighting'
-    'source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-    ''
-    '### thefuck'
-    'eval $(thefuck --alias)'
-)
+echo "
+#neofetch
+neofetch --config ~/.config/neofetch/.neofetch.conf
+bash ~/scripts/kaamelott.sh
+echo ''
 
-# Ajouter les lignes à .zshrc
-for line in "${aliases[@]}"; do
-    echo "$aliases" >> /home/${USER}/.zshrc
-done
+### Alias
+alias cat='\'bat -p\''
+alias catn=bat
+
+alias ls='\'exa --grid --color auto --icons --sort=type\''
+alias ll='\'exa --long --color always --icons --sort=type\''
+alias la='\'exa --grid --all --color auto --icons --sort=type\''
+alias lla='\'exa --long --all --color auto --icons --sort=type\''
+
+### zsh-autocompletion
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+### zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+### thefuck
+eval $(thefuck --alias)
+" >> /home/${USER}/.zshrc
 
 # Files and folders copy
+if [ ! -d ~/.config/neofetch ]; then
+  mkdir -p ~/.config/neofetch
+fi
 cp -r ./neofetch/* ~/.config/neofetch
